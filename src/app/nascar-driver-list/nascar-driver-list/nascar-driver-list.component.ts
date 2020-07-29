@@ -9,25 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NascarDriverListComponent implements OnInit {
 
-  driverList: NascarDriverListModel[];
+  driverList: NascarDriverListModel;
   err: any;
 
-  constructor(private driverListService: NascarDriverListService) {
+  constructor(private driverListService: NascarDriverListService) { 
 
     this.getDriversList();
-   }
+  }
 
+  
   ngOnInit(): void {
   }
 
   getDriversList() {
     this.driverListService.getNascarDriverList().subscribe(
       (driversData) => {
-        this.driverList = driversData;        
+        this.driverList = driversData;     
       },
       (error: any) => {
         this.err = error;
       } 
     )
+    console.log('driverList: '+ this.driverList);   
   }
+
 }
+
+  
+
