@@ -1,12 +1,14 @@
-// const proxy = [ {
-//     context: '/api',
-//     target: 'https://api.sportradar.us',
-//     pathRewrite: { '^/api': '' },
-//     secure: false,
-//     changeOrigin: true
-// } 
-// ];
+const PROXY_CONFIG = [ 
+    {
+    context: ['/api'],
+    target: 'https://api.sportradar.us',
+    secure: true,
+    logLevel: 'debug',
+    changeOrigin: true,
+    pathRewrite: { '^/api': '' },
+    } 
+];
 
-// module.exports = proxy;
+module.exports = PROXY_CONFIG;
 
 

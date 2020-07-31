@@ -24,6 +24,7 @@ export class NascarDriverListComponent implements OnInit {
   getDriversList() {
     this.driverListService.getNascarDriverList().subscribe(
       (driversData) => {
+        console.log('driversData: '+ driversData);  
         this.driverList = driversData;     
       },
       (error: any) => {
